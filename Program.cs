@@ -1,13 +1,27 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using WebApi.DBOperations;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Middlewares;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<UserDBContext>(options => options.UseInMemoryDatabase(databaseName: "UserDB"));
 
 var app = builder.Build();
+
+
+//veritabanını başlat
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    DataGenerator.Initialize(services);
+}
+
+// Global loglama middleware'i.
+app.UseMiddleware<CustomExceptionMiddleware>();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,4 +37,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

@@ -15,6 +15,6 @@ public class User
 
     public string Phone { get; set; }
 
-    public string Job { get; set; }
+    public int JobId { get; set; }
 
 }

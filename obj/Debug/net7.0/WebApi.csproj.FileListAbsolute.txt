@@ -31,3 +31,7 @@
 /Users/cerenersoz/Projects/WebApi/WebApi/obj/Debug/net7.0/WebApi.pdb
 /Users/cerenersoz/Projects/WebApi/WebApi/obj/Debug/net7.0/WebApi.genruntimeconfig.cache
 /Users/cerenersoz/Projects/WebApi/WebApi/obj/Debug/net7.0/ref/WebApi.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/obj/Debug/net7.0/WebApi.sourcelink.json
