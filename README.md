@@ -1,6 +1,6 @@
 # Web-API-User-Management
 
-his project contains a simple example of a Web API for user management. The project supports `GET`, `POST`, `PUT`, `DELETE`, and `PATCH` HTTP methods following REST standards. It also pays attention to HTTP status codes, error handling, model validation, routing, and model binding processes.
+This project contains a simple example of a Web API for user management. The project supports `GET`, `POST`, `PUT` and `DELETE` HTTP methods following REST standards. It also pays attention to HTTP status codes, error handling, model validation, routing, and model binding processes.
 
 ## Usage
 
@@ -15,8 +15,4 @@ his project contains a simple example of a Web API for user management. The proj
 - `POST /Users`: Adds a new user.
 - `PUT /Users/{id}`: Updates the user with the specified ID.
 - `DELETE /Users/{id}`: Deletes the user with the specified ID.
-- `PATCH /Users/{id}`: Updates the name of the user with the specified ID.
 
-## Query Parameters
-
-- `GET /Users/list?name={name}`: Filters users by name.
