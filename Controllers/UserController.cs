@@ -77,6 +77,8 @@ namespace WebApi.Controllers
         {
             DeleteUserCommand command = new DeleteUserCommand(_context);
             command.UserId = id;
+            DeleteUserCommandValidator validator = new DeleteUserCommandValidator();
+            validator.ValidateAndThrow(command);
             command.Handle();
             return Ok();
         }
