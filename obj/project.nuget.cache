@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Siyn7lmtpBHoWLGpPrGa/kRoXit+JQc2+zoEJWmKxLFDpiDVjGEi3PmNUkuNoF0HxujaBy3V+v1zQBAM2Sn5vA==",
+  "dgSpecHash": "wa4gZgUHJlq6pdq840a2QJcvo8wDlclwmFhOK+S3RmaMC7X4ZgeHmN8lxqVuDfR7GnOMaB/P4PdVdQmCE7kgHw==",
   "success": true,
   "projectFilePath": "/Users/cerenersoz/Projects/WebApi/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
     "/Users/cerenersoz/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/cerenersoz/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/cerenersoz/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
     "/Users/cerenersoz/.nuget/packages/microsoft.aspnetcore.openapi/7.0.14/microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
     "/Users/cerenersoz/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/cerenersoz/.nuget/packages/microsoft.entityframeworkcore/5.0.6/microsoft.entityframeworkcore.5.0.6.nupkg.sha512",

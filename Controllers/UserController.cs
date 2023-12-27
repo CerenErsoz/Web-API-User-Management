@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using WebApi.DBOperations;
 using WebApi.UserOperations.CreateUser;
 using WebApi.UserOperations.DeleteUser;
@@ -51,8 +54,10 @@ namespace WebApi.Controllers
         {
             CreateUserCommand command = new CreateUserCommand(_context, _mapper);
             command.Model = newUser;
+            CreateUserCommandValidator validator = new CreateUserCommandValidator();
+            validator.ValidateAndThrow(command);
             command.Handle();
-            return Ok();
+            return Ok(newUser);
         }
 
 
