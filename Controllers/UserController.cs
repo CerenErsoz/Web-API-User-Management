@@ -43,6 +43,8 @@ namespace WebApi.Controllers
         {
             GetUserDetailQuery query = new GetUserDetailQuery(_context, _mapper);
             query.UserId = id;
+            GetUserDetailQueryValidator validator = new GetUserDetailQueryValidator();
+            validator.ValidateAndThrow(query);
             var result = query.Handle();
             return Ok(result);
 

@@ -19,6 +19,8 @@ namespace WebApi.UserOperations.GetUserDetailQuery
         public UserDetailViewModel Handle()
         {
             var user = _dbContext.Users.Where(user => user.Id == UserId).SingleOrDefault();
+            if (user is null)
+                throw new InvalidOperationException("User is not valid.");
             UserDetailViewModel vm = _mapper.Map<UserDetailViewModel>(user);
             return vm;
         }
