@@ -1,6 +1,7 @@
 ﻿using WebApi.DBOperations;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Middlewares;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<UserDBContext>(options => options.UseInMemoryDatabase(databaseName: "UserDB"));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 

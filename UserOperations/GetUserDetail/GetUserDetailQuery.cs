@@ -1,5 +1,4 @@
-
-
+using AutoMapper;
 using WebApi.Common;
 using WebApi.DBOperations;
 
@@ -9,24 +8,20 @@ namespace WebApi.UserOperations.GetUserDetailQuery
     {
 
         private readonly UserDBContext _dbContext;
+        private readonly IMapper _mapper;
         public int UserId { get; set; }
-        public GetUserDetailQuery(UserDBContext dbContext)
+        public GetUserDetailQuery(UserDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public UserDetailViewModel Handle()
         {
             var user = _dbContext.Users.Where(user => user.Id == UserId).SingleOrDefault();
-            UserDetailViewModel vm = new UserDetailViewModel();
-            vm.Name = user.Name;
-            vm.Email = user.Email;
-            vm.Phone = user.Phone;
-            vm.Job = ((JobEnum)user.JobId).ToString();
+            UserDetailViewModel vm = _mapper.Map<UserDetailViewModel>(user);
             return vm;
         }
-
-
     }
 
     public class UserDetailViewModel
@@ -36,6 +31,4 @@ namespace WebApi.UserOperations.GetUserDetailQuery
         public string Phone { get; set; }
         public string Job { get; set; }
     }
-
-
 }

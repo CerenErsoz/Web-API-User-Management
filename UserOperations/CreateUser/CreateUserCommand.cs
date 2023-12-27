@@ -1,3 +1,5 @@
+using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using WebApi.Common;
 using WebApi.DBOperations;
 
@@ -7,23 +9,19 @@ namespace WebApi.UserOperations.CreateUser
     {
         public CreateUserModel Model { get; set; }
         private readonly UserDBContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public CreateUserCommand(UserDBContext dbContext)
+        public CreateUserCommand(UserDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
 
         public void Handle()
         {
             var user = _dbContext.Users.SingleOrDefault(x => x.Name == Model.Name);
-
-            user = new User();
-            user.Name = Model.Name;
-            user.Email = Model.Email;
-            user.Phone = Model.Phone;
-            user.JobId = Model.Job;
-
+            user = _mapper.Map<User>(Model);//Model ile gelen veriyi User objesine ekle
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
         }

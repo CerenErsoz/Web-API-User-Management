@@ -1,10 +1,7 @@
-
-
 using WebApi.DBOperations;
 
 namespace WebApi.UserOperations.UpdateUser
 {
-
     public class UpdateUserCommand
     {
 
@@ -15,7 +12,6 @@ namespace WebApi.UserOperations.UpdateUser
 
         public UpdateUserCommand(UserDBContext context)
         {
-
             _context = context;
         }
 
@@ -26,7 +22,6 @@ namespace WebApi.UserOperations.UpdateUser
             user.JobId = Model.Job != default ? Model.Job : user.JobId;
             _context.SaveChanges();
         }
-
     }
 
     public class UpdateUserModel

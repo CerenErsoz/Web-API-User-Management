@@ -1,10 +1,7 @@
-
-
 using WebApi.DBOperations;
 
 namespace WebApi.UserOperations.DeleteUser
 {
-
     public class DeleteUserCommand
     {
 
@@ -20,8 +17,6 @@ namespace WebApi.UserOperations.DeleteUser
         public void Handle()
         {
             var user = _context.Users.SingleOrDefault(x => x.Id == UserId);
-
-
             _context.Users.Remove(user);
             _context.SaveChanges();
         }

@@ -35,3 +35,6 @@
 /Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/cerenersoz/Projects/WebApi/WebApi/obj/Debug/net7.0/WebApi.sourcelink.json
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/AutoMapper.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/cerenersoz/Projects/WebApi/WebApi/bin/Debug/net7.0/Newtonsoft.Json.dll

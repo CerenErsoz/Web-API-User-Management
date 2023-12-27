@@ -60,7 +60,6 @@ namespace WebApi.Middlewares
     }
 
 
-    //program.cs dosyasında çağırabilmek için 
     public static class CustomMiddlewareExtensions
     {
         public static IApplicationBuilder UseLoggingMiddleware(this IApplicationBuilder builder)
