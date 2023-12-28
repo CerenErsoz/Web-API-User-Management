@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using WebApi.DBOperations;
 using WebApi.UserOperations.CreateUser;
 using WebApi.UserOperations.DeleteUser;
@@ -69,6 +67,8 @@ namespace WebApi.Controllers
             UpdateUserCommand command = new UpdateUserCommand(_context);
             command.UserId = id;
             command.Model = updateUser;
+            UpdateUserCommandValidator validator = new UpdateUserCommandValidator();
+            validator.ValidateAndThrow(command);
             command.Handle();
             return Ok();
         }
