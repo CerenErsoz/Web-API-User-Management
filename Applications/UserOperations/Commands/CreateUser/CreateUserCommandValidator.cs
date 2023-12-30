@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WebApi.UserOperations.CreateUser
+namespace WebApi.Applications.UserOperations.Commands.CreateUser
 {
     public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {

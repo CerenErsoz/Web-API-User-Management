@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WebApi.UserOperations.DeleteUser
+namespace WebApi.Applications.UserOperations.Commands.DeleteUser
 {
     public class DeleteUserCommandValidator : AbstractValidator<DeleteUserCommand>
     {

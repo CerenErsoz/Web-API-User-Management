@@ -1,9 +1,7 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using WebApi.Common;
 using WebApi.DBOperations;
 
-namespace WebApi.UserOperations.CreateUser
+namespace WebApi.Applications.UserOperations.Commands.CreateUser
 {
     public class CreateUserCommand
     {
@@ -34,6 +32,5 @@ namespace WebApi.UserOperations.CreateUser
             public string Phone { get; set; }
             public int Job { get; set; }
         }
-
     }
 }

@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Applications.UserOperations.Commands.CreateUser;
+using WebApi.Applications.UserOperations.Commands.DeleteUser;
+using WebApi.Applications.UserOperations.Commands.UpdateUser;
+using WebApi.Applications.UserOperations.Queries.GetUserDetailQuery;
+using WebApi.Applications.UserOperations.Queries.GetUsers;
 using WebApi.DBOperations;
-using WebApi.UserOperations.CreateUser;
-using WebApi.UserOperations.DeleteUser;
-using WebApi.UserOperations.GetUserDetailQuery;
-using WebApi.UserOperations.GetUsers;
-using WebApi.UserOperations.UpdateUser;
-using static WebApi.UserOperations.CreateUser.CreateUserCommand;
+using static WebApi.Applications.UserOperations.Commands.CreateUser.CreateUserCommand;
 
 namespace WebApi.Controllers
 {

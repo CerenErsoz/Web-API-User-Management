@@ -1,12 +1,11 @@
 using AutoMapper;
-using WebApi.Common;
+using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperations;
 
-namespace WebApi.UserOperations.GetUserDetailQuery
+namespace WebApi.Applications.UserOperations.Queries.GetUserDetailQuery
 {
     public class GetUserDetailQuery
     {
-
         private readonly UserDBContext _dbContext;
         private readonly IMapper _mapper;
         public int UserId { get; set; }
@@ -18,7 +17,7 @@ namespace WebApi.UserOperations.GetUserDetailQuery
 
         public UserDetailViewModel Handle()
         {
-            var user = _dbContext.Users.Where(user => user.Id == UserId).SingleOrDefault();
+            var user = _dbContext.Users.Include(x => x.Job).Where(user => user.Id == UserId).SingleOrDefault();
             if (user is null)
                 throw new InvalidOperationException("User is not valid.");
             UserDetailViewModel vm = _mapper.Map<UserDetailViewModel>(user);

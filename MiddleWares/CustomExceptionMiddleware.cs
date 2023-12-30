@@ -1,12 +1,6 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
 using System.Diagnostics;
 using System.Net;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using WebApi.Services;
 
 namespace WebApi.Middlewares

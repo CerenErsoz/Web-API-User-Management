@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace WebApi.UserOperations.GetUserDetailQuery
+namespace WebApi.Applications.UserOperations.Queries.GetUserDetailQuery
 {
     public class GetUserDetailQueryValidator : AbstractValidator<GetUserDetailQuery>
     {

@@ -1,15 +1,15 @@
 using WebApi.DBOperations;
 
-namespace WebApi.UserOperations.DeleteUser
+namespace WebApi.Applications.UserOperations.Commands.UpdateUser
 {
-    public class DeleteUserCommand
+    public class UpdateUserCommand
     {
-
         private readonly UserDBContext _context;
         public int UserId { get; set; }
-        public DeleteUserModel Model { get; set; }
 
-        public DeleteUserCommand(UserDBContext context)
+        public UpdateUserModel Model { get; set; }
+
+        public UpdateUserCommand(UserDBContext context)
         {
             _context = context;
         }
@@ -17,17 +17,15 @@ namespace WebApi.UserOperations.DeleteUser
         public void Handle()
         {
             var user = _context.Users.SingleOrDefault(x => x.Id == UserId);
-            _context.Users.Remove(user);
+            user.Name = Model.Name != default ? Model.Name : user.Name;
+            user.JobId = Model.Job != default ? Model.Job : user.JobId;
             _context.SaveChanges();
         }
-
     }
 
-    public class DeleteUserModel
+    public class UpdateUserModel
     {
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
         public int Job { get; set; }
     }
 
