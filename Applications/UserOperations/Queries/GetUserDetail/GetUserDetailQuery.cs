@@ -6,10 +6,10 @@ namespace WebApi.Applications.UserOperations.Queries.GetUserDetailQuery
 {
     public class GetUserDetailQuery
     {
-        private readonly UserDBContext _dbContext;
+        private readonly IUserDbContext _dbContext;
         private readonly IMapper _mapper;
         public int UserId { get; set; }
-        public GetUserDetailQuery(UserDBContext dbContext, IMapper mapper)
+        public GetUserDetailQuery(IUserDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

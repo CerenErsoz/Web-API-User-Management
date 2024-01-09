@@ -16,11 +16,11 @@ namespace WebApi.Controllers
 
     public class UserController : ControllerBase
     {
-        private readonly UserDBContext _context;
+        private readonly IUserDbContext _context;
         private readonly IMapper _mapper;
 
 
-        public UserController(UserDBContext context, IMapper mapper)
+        public UserController(IUserDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

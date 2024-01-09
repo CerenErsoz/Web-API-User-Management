@@ -6,10 +6,10 @@ namespace WebApi.Applications.UserOperations.Commands.CreateUser
     public class CreateUserCommand
     {
         public CreateUserModel Model { get; set; }
-        private readonly UserDBContext _dbContext;
+        private readonly IUserDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateUserCommand(UserDBContext dbContext, IMapper mapper)
+        public CreateUserCommand(IUserDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

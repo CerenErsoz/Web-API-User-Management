@@ -6,10 +6,10 @@ namespace WebApi.Applications.UserOperations.Queries.GetUsers
 {
     public class GetUsersQuery
     {
-        private readonly UserDBContext _dbContext;
+        private readonly IUserDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetUsersQuery(UserDBContext dbContext, IMapper mapper)
+        public GetUsersQuery(IUserDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

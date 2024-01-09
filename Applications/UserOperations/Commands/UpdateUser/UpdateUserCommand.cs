@@ -4,12 +4,12 @@ namespace WebApi.Applications.UserOperations.Commands.UpdateUser
 {
     public class UpdateUserCommand
     {
-        private readonly UserDBContext _context;
+        private readonly IUserDbContext _context;
         public int UserId { get; set; }
 
         public UpdateUserModel Model { get; set; }
 
-        public UpdateUserCommand(UserDBContext context)
+        public UpdateUserCommand(IUserDbContext context)
         {
             _context = context;
         }

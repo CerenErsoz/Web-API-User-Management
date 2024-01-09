@@ -6,8 +6,8 @@ namespace WebApi.Applications.JobOperations.Commands.UpdateJob
     {
         public int JobId { get; set; }
         public UpdateJobModel Model { get; set; }
-        private readonly UserDBContext _context;
-        public UpdateJobCommand(UserDBContext context)
+        private readonly IUserDbContext _context;
+        public UpdateJobCommand(IUserDbContext context)
         {
             _context = context;
         }

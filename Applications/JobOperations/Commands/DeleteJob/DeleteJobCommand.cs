@@ -5,8 +5,8 @@ namespace WebApi.Applications.JobOperations.Commands.DeleteJob
     public class DeleteJobCommand
     {
         public int JobId { get; set; }
-        private readonly UserDBContext _context;
-        public DeleteJobCommand(UserDBContext context)
+        private readonly IUserDbContext _context;
+        public DeleteJobCommand(IUserDbContext context)
         {
             _context = context;
         }

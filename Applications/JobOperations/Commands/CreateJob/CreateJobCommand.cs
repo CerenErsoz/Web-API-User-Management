@@ -6,9 +6,9 @@ namespace WebApi.Applications.JobOperations.Commands.CreateJob
     public class CreateJobCommand
     {
         public CreateJobModel Model { get; set; }
-        private readonly UserDBContext _context;
+        private readonly IUserDbContext _context;
 
-        public CreateJobCommand(UserDBContext context)
+        public CreateJobCommand(IUserDbContext context)
         {
             _context = context;
         }

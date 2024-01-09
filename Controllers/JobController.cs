@@ -15,11 +15,11 @@ namespace WebApi.Controllers
 
     public class JobController : ControllerBase
     {
-        private readonly UserDBContext _context;
+        private readonly IUserDbContext _context;
         private readonly IMapper _mapper;
 
 
-        public JobController(UserDBContext context, IMapper mapper)
+        public JobController(IUserDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

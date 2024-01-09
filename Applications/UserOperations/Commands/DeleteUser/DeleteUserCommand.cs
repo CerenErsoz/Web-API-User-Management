@@ -4,11 +4,11 @@ namespace WebApi.Applications.UserOperations.Commands.DeleteUser
 {
     public class DeleteUserCommand
     {
-        private readonly UserDBContext _context;
+        private readonly IUserDbContext _context;
         public int UserId { get; set; }
         public DeleteUserModel Model { get; set; }
 
-        public DeleteUserCommand(UserDBContext context)
+        public DeleteUserCommand(IUserDbContext context)
         {
             _context = context;
         }

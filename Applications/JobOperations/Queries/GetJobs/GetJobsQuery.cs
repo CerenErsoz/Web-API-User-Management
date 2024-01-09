@@ -5,10 +5,10 @@ namespace WebApi.Applications.JobOperations.Queries.GetJobs
 {
     public class GetJobsQuery
     {
-        public readonly UserDBContext _context;
+        public readonly IUserDbContext _context;
         public readonly IMapper _mapper;
 
-        public GetJobsQuery(UserDBContext context, IMapper mapper)
+        public GetJobsQuery(IUserDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
